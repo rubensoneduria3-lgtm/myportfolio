@@ -1,18 +1,17 @@
 <?php
-if($_SERVER["REQUEST_METHOD"]=="POST"){
-$name=$_POST['name'];
-$email=$_POST['email'];
-$message=$_POST['message'];
+ini_set('SMTP', 'localhost');
+ini_set('smtp_port', '1025'); // Use your local port
+ini_set('sendmail_from', 'noreply@yourdomain.com');
 
-$to="your@email.com";
-$subject="New Message from GRAPHICSWEB";
-$body="Name: $name\nEmail: $email\nMessage: $message";
-$headers="From: $email";
+// Your mail function logic
+$to = "recipient@example.com";
+$subject = "Test Message";
+$message = "Hello World";
+$headers = "From: sender@example.com";
 
-if(mail($to,$subject,$body,$headers)){
- echo "Message sent successfully!";
-}else{
- echo "Failed to send message.";
-}
+if (mail($to, $subject, $message, $headers)) {
+    echo "Message sent successfully!";
+} else {
+    echo "Failed to send message.";
 }
 ?>
