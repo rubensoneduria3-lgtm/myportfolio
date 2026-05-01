@@ -4,7 +4,7 @@ $name=$_POST['name'];
 $email=$_POST['email'];
 $message=$_POST['message'];
 
-$to="your@email.com";
+$to="rubensoneduria3@gmail.com";
 $subject="New Message from GRAPHICSWEB";
 $body="Name: $name\nEmail: $email\nMessage: $message";
 $headers="From: $email";
