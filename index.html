@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAPHICSWEB</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body{background:#050b18;color:#fff;}
+header{position:fixed;width:100%;top:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:1000;}
+header img{height:50px;}
+nav a{margin:0 15px;color:#fff;text-decoration:none;font-weight:500;}
+.hero{height:100vh;background:url('image.png') center/cover no-repeat;display:flex;align-items:center;padding:0 60px;}
+.hero-content{max-width:600px;}
+.hero h1{font-size:48px;line-height:1.2;}
+.hero span{color:#00aaff;}
+.btn{display:inline-block;margin-top:20px;padding:12px 30px;background:#00aaff;border-radius:30px;color:#fff;text-decoration:none;}
+.section{padding:100px 60px;}
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;}
+.card{background:#0a1224;padding:30px;border-radius:15px;text-align:center;transition:0.3s;}
+.card:hover{transform:translateY(-10px);}
+.portfolio{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
+.portfolio img{width:100%;border-radius:10px;}
+form{display:flex;flex-direction:column;gap:15px;max-width:500px;}
+input,textarea{padding:10px;border:none;border-radius:5px;}
+footer{text-align:center;padding:30px;background:#000;}
+</style>
+</head>
+<body>
+<header>
+<img src="logo.png" alt="logo">
+<nav>
+<a href="#">Home</a>
+<a href="#services">Services</a>
+<a href="#portfolio">Portfolio</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>WE TURN IDEAS INTO <span>STUNNING VISUAL DESIGNS</span></h1>
+<a href="#contact" class="btn">Get Started</a>
+</div>
+</section>
+
+<section id="services" class="section">
+<h2>Our Services</h2>
+<div class="services">
+<div class="card"><h1>Logo Design</h1>
+	<p>We create a logo design for your business</p> 
+</div>
+<div class="card"><h1>Branding</h1>
+	<p>We create branding for your business</p>
+</div>
+<div class="card"><h1>Social Media</h1>
+	<p>We Create ads for your business</p>
+</div>
+<div class="card"><h1>Website Design</h1>
+	<p>We create responsive and user friendly website for your business</p>
+</div>
+</div>
+</section>
+
+<section id="portfolio" class="section">
+<h2>Portfolio</h2>
+<div class="portfolio">
+<img src="logo.png">
+<img src="chick.png">
+<img src="GRAPHICS1.png">
+<img src="image.png">
+</div>
+</section>
+
+<section id="contact" class="section">
+<h2>Contact Us</h2>
+<form action="contact.php" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 GRAPHICSWEB</p>
+</footer>
+
+<script>
+// smooth scroll
+const links=document.querySelectorAll('nav a');
+links.forEach(link=>{
+link.addEventListener('click',e=>{
+e.preventDefault();
+document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+});
+});
+</script>
+</body>
+</html>
